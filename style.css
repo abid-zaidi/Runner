@@ -44,6 +44,7 @@ canvas {
   font-size: 1.1rem;
   color: #333;
 }
+
 @media (max-width: 768px) {
   body {
     display: flex;
@@ -60,7 +61,12 @@ canvas {
   .controls {
     display: none; /* Hide controls in mobile view */
   }
+  #container {
+    width: 100vw; /* Make container full screen in mobile view */
+    height: 100vh; /* Make container full screen in mobile view */
+  }
 }
+
 /* Responsive Styling */
 @media (max-width: 768px) {
   body {
