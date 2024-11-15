@@ -1,0 +1,73 @@
+/* General Styling */
+body {
+  background: linear-gradient(135deg, #d7e7ff, #b4c9ff); /* Softer gradient */
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  height: 100vh;
+}
+
+#container {
+  display: inline-block;
+  width: 90%;
+  max-width: 900px; /* Increased max-width for larger canvas */
+  margin-top: 20px;
+}
+
+canvas {
+  background: #f0f0f0; /* Lighter canvas background */
+  border: 2px solid #1a1a1a; /* Darker border */
+  border-radius: 10px; /* Rounded corners */
+  width: 100%;
+  height: auto;
+}
+
+.controls {
+  margin-top: 15px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  display: inline-block;
+  width: 90%;
+  max-width: 900px;
+  text-align: center;
+}
+
+.controls p {
+  margin: 8px 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+@media (max-width: 768px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+  }
+  .controls {
+    display: none; /* Hide controls in mobile view */
+  }
+}
+/* Responsive Styling */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    height: auto;
+  }
+  #container, .controls {
+    width: 95%;
+  }
+}
