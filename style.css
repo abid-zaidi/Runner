@@ -61,10 +61,7 @@ canvas {
   .controls {
     display: none; /* Hide controls in mobile view */
   }
-  #container {
-    width: 100vw; /* Make container full screen in mobile view */
-    height: 100vh; /* Make container full screen in mobile view */
-  }
+ 
 }
 
 /* Responsive Styling */
@@ -74,6 +71,7 @@ canvas {
     height: auto;
   }
   #container, .controls {
-    width: 95%;
+    width: 100vw; /* Make container full screen in mobile view */
+    height: 100vh; /* Make container full screen in mobile view */
   }
 }
