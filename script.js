@@ -344,18 +344,3 @@ InfiniteRunner.draw = function() {
 };
 
 InfiniteRunner.resize = function() {};
-
-// Rotate canvas to landscape in mobile view
-function handleOrientation() {
-  const isMobile = window.innerWidth < 768;
-  if (isMobile && window.innerHeight > window.innerWidth) {
-    document.getElementById('container').style.display = 'none';
-    alert("Please rotate your device to landscape mode for the best experience.");
-  } else {
-    document.getElementById('container').style.display = 'block';
-  }
-}
-
-// Check orientation on load and on resize
-window.addEventListener('load', handleOrientation);
-window.addEventListener('resize', handleOrientation);
