@@ -1,5 +1,3 @@
-
-
 var i = 0;
 
 function random( min, max ) {
@@ -245,6 +243,17 @@ InfiniteRunner.setup = function () {
   this.scoreColor = '#181818';
   this.jumpCountRecord = 0;
 
+  // Add touch event listener for mobile
+  const isMobile = window.innerWidth < 768;
+  if (isMobile) {
+    this.container.addEventListener('touchstart', function() {
+      InfiniteRunner.player.velocityY = InfiniteRunner.player.jumpSize;
+      InfiniteRunner.jumpCount++;
+      if (InfiniteRunner.jumpCount > InfiniteRunner.jumpCountRecord) {
+        InfiniteRunner.jumpCountRecord = InfiniteRunner.jumpCount;
+      }
+    });
+  }
 };
 
 InfiniteRunner.update = function() {
@@ -356,3 +365,17 @@ InfiniteRunner.draw = function(){
 InfiniteRunner.resize = function() {
 
 };
+// Rotate canvas to landscape in mobile view
+function handleOrientation() {
+  const isMobile = window.innerWidth < 768;
+  if (isMobile && window.innerHeight > window.innerWidth) {
+    document.getElementById('container').style.display = 'none';
+    alert("Please rotate your device to landscape mode for the best experience.");
+  } else {
+    document.getElementById('container').style.display = 'block';
+  }
+}
+
+// Check orientation on load and on resize
+window.addEventListener('load', handleOrientation);
+window.addEventListener('resize', handleOrientation);
