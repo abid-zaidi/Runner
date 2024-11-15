@@ -73,5 +73,7 @@ canvas {
   #container, .controls {
     width: 100vw; /* Make container full screen in mobile view */
     height: 100vh; /* Make container full screen in mobile view */
+    margin-top: 0;
+
   }
 }
